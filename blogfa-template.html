@@ -1,0 +1,171 @@
+<html>
+<head>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+	<link href="http://s2.picofile.com/file/7586432468/tileblue.png" rel="shortcut icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type="text/javascript">
+    function GetBC(lngPostid)
+    {
+     intTimeZone=<-BlogTimeZone->;
+     strBlogId="<-BlogId->";
+     intCount=-1;
+     strResult="";
+     try {
+       for (i=0;i<BlogComments.length;i+=2)
+       {
+        if (BlogComments[i]==lngPostid)
+          intCount=BlogComments[i+1] ;
+      }
+      }  catch( e) {
+      }
+      if ( intCount==-1)  strResult="آرشیو نظرات";
+      if ( intCount==0)  strResult="نظر بدهید";
+      if ( intCount==1)  strResult="یک نظر";
+      if ( intCount>1)  strResult=intCount + " نظر" ;
+      
+      strUrl="/comments/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
+      strResult ="<a class='cm-btn waves-effect waves-light btn indigo darken-4 white-text' href=\"javascript:void(0)\" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
+
+      document.write ( strResult ) ;
+    }
+
+    function OpenLD()
+    {
+      window.open('/links','blogfa_ld','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px');
+      return true;
+    }
+  </script>
+  <title><-BlogTitle-></title>
+  <style>
+    html{
+      font-family: tahoma, iransans;
+    }
+    header, main, footer {
+      padding-left: 250px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+    .parallax-container {
+        height: 250px;
+    }
+    .rtl {
+      direction: rtl;
+    }
+    .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating){
+      margin-right: 0;
+    }
+    .container {
+      max-width: 600px;
+    }
+    .postdesc {
+      font-size: 7pt;
+    }
+    .cm-btn {
+      padding: 0 10px;
+      height: 25px;
+      line-height: 25px;
+      font-size: 8pt;
+    }
+    .chip {
+      height: 25px;
+      line-height: 25px;
+    }
+    .nav-link {
+      float: left;
+    }
+    .side-nav li {
+      min-height: 64px;
+    }
+    .card-title {
+      font-size: 14pt !important;
+    }
+    .side-nav.fixed {
+      overflow: hidden;
+    }
+    .side-nav.fixed:hover {
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+	<header class="indigo darken-4 white-text">
+    <a href="#" data-activates="slide-out" class="button-collapse white-text top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="side-nav fixed">
+      <li>
+        <a class="nav-link text-darken-4 indigo-text" href="<-BlogUrl->"><i class="material-icons">home</i></a>
+        <a class="nav-link text-darken-4 indigo-text" href="<-BlogArchiveLink->"><i class="material-icons">archive</i></a>
+        <a class="nav-link text-darken-4 indigo-text" href="mailto:<-BlogEmail->"><i class="material-icons">email</i></a>
+      </li>
+      <-BlogCustomHtml->
+    </ul>
+  </header>
+  <main>
+    <div class="parallax-container">
+      <div class="parallax"><img src="https://cdn.rawgit.com/samehraban/md-blogfa/master/images/header.jpg"></div>
+    </div>
+    <div class="container main">
+      <BLOGFA>
+        <div class="card">
+          <div class="card-content">
+            <div class="card-title rtl"><a href="<-PostLink->"><-PostTitle-></a></div>
+            <div class="post-body rtl">
+              <-PostContent->
+              <BlogExtendedPost><br><a class="waves-effect waves-light btn indigo darken-4 white-text" href="<-PostLink->">ادامه مطلب</a></BlogExtendedPost>
+              <div class="postdesc">
+                <-PostDate->&nbsp;&nbsp;|&nbsp;<-PostAuthor->&nbsp;
+              </div>
+            </div>
+            <div class="card-action rtl">
+              <BlogComment>
+                <script type="text/javascript">GetBC(<-PostId->);</script>
+              </BlogComment>
+              <BlogPostTagsBlock>
+                <BlogPostTags>
+                  <div class="chip indigo darken-4 white-text">
+                    <a class="white-text" href="<-TagLink->"><-TagName-></a>
+                  </div>
+                </BlogPostTags>
+              </BlogPostTagsBlock>
+            </div>
+          </div>
+        </div>
+      </BLOGFA>
+
+      <BlogNextAndPreviousBlock>
+      <div>
+      <BlogPreviousPageBlock>
+      <a class="waves-effect waves-light btn-floating indigo darken-4 white-text right" href="<-BlogPreviousPageLink->"><i class="material-icons">keyboard_arrow_right</i></a>
+      </BlogPreviousPageBlock>
+      <BlogNextPageBlock>
+      <a class="waves-effect waves-light btn-floating indigo darken-4 white-text" href="<-BlogNextPageLink->"><i class="material-icons">keyboard_arrow_left</i></a>
+      </BlogNextPageBlock>
+      </div>
+      </BlogNextAndPreviousBlock>
+    </div>
+  </main>
+
+  <footer class="page-footer indigo darken-4">
+    <div class="footer-copyright blue darken-4 white-text center-align">
+      © Design by <a class="white-text" href="mailto:sadelmehraban@gmail.com">Mehraban</a>
+    </div>
+  </footer>
+
+</body>
+<script  language="javascript">
+  $(document).ready(function(){
+    $(".button-collapse").sideNav({
+      menuWidth: 250
+    });
+    $('.parallax').parallax();
+  });
+</script>
+</html>
