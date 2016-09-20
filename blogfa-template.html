@@ -80,11 +80,14 @@
     .postdesc {
       font-size: 7pt;
     }
-    .cm-btn {
+    .cm-btn, .continue-btn {
       padding: 0 10px;
       height: 25px;
       line-height: 25px;
       font-size: 8pt;
+    }
+    .continue-btn {
+    	margin-bottom: 5px;
     }
     .chip {
       height: 25px;
@@ -130,7 +133,7 @@
             <div class="card-title rtl"><a href="<-PostLink->"><-PostTitle-></a></div>
             <div class="post-body rtl">
               <-PostContent->
-              <BlogExtendedPost><br><a class="waves-effect waves-light btn indigo darken-4 white-text" href="<-PostLink->">ادامه مطلب</a></BlogExtendedPost>
+              <BlogExtendedPost><br><a class="continue-btn waves-effect waves-light btn indigo darken-4 white-text" href="<-PostLink->">ادامه مطلب</a></BlogExtendedPost>
               <div class="postdesc">
                 <-PostDate->&nbsp;&nbsp;|&nbsp;<-PostAuthor->&nbsp;
               </div>
