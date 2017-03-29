@@ -17,7 +17,7 @@ body {
   flex-direction: column;
 }
 
-body + div{
+body > div{
   display: none;
 }
 
