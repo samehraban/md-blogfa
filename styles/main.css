@@ -1,0 +1,67 @@
+html{
+  font-family: 'IranSans', tahoma, iransans,serif;
+}
+header, main, footer {
+  padding-left: 250px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  background: white;
+}
+
+.parallax-container {
+  height: 250px;
+}
+.rtl {
+  direction: rtl;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating){
+  margin-right: 0;
+}
+.container {
+  max-width: 600px;
+}
+.postdesc {
+  font-size: 7pt;
+}
+.cm-btn, .continue-btn {
+  padding: 0 10px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 8pt;
+}
+.continue-btn {
+  margin-bottom: 5px;
+}
+.chip {
+  height: 25px;
+  line-height: 25px;
+}
+.nav-link {
+  float: left;
+}
+.side-nav li {
+  min-height: 64px;
+}
+.card-title {
+  font-size: 14pt !important;
+}
+.side-nav.fixed {
+  overflow: hidden;
+}
+.side-nav.fixed:hover {
+  overflow: auto;
+}
