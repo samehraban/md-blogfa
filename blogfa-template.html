@@ -4,8 +4,8 @@
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-  <link href="https://cdn.rawgit.com/samehraban/md-blogfa/v0.0.1/styles/fontiran.css" rel="stylesheet" type="text/css" />
-  <link href="https://cdn.rawgit.com/samehraban/md-blogfa/v0.0.1/styles/main.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.rawgit.com/samehraban/md-blogfa/v0.0.2/styles/fontiran.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.rawgit.com/samehraban/md-blogfa/v0.0.2/styles/main.css" rel="stylesheet" type="text/css" />
 
 	<!-- Compiled and minified JavaScript -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -31,7 +31,7 @@
       if ( intCount==0)  strResult="نظر بدهید";
       if ( intCount==1)  strResult="یک نظر";
       if ( intCount>1)  strResult=intCount + " نظر" ;
-      
+
       strUrl="/comments/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
       strResult ="<a class='cm-btn waves-effect waves-light btn indigo darken-4 white-text' href=\"javascript:void(0)\" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
 
@@ -60,7 +60,7 @@
   </header>
   <main>
     <div class="parallax-container">
-      <div class="parallax"><img src="https://cdn.rawgit.com/samehraban/md-blogfa/master/images/header.jpg"></div>
+      <div class="parallax"><img src="https://cdn.rawgit.com/samehraban/md-blogfa/v0.0.2/images/header.jpg"></div>
     </div>
     <div class="container main">
       <BLOGFA>
