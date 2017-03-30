@@ -15,15 +15,19 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background: white;
 }
 
-body > div{
+a.button-collapse.top-nav i {
+  font-size: 32px;
+}
+
+body > div:first-child{
   display: none;
 }
 
 main {
   flex: 1 0 auto;
-  background: white;
 }
 
 .parallax-container {
@@ -59,13 +63,24 @@ main {
 }
 .side-nav li {
   min-height: 64px;
+  margin-top: 15px;
 }
 .card-title {
   font-size: 14pt !important;
 }
-.side-nav.fixed {
-  overflow: hidden;
+a.button-collapse.top-nav {
+  padding: 15px;
 }
-.side-nav.fixed:hover {
-  overflow: auto;
+.footer-copyright p{
+  margin-right:auto;
+  margin-left:auto;
+}
+.side-nav li>a {
+  padding: 0 10px;
+}
+.side-nav.fixed {
+  left: 0;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  position: fixed;
 }
